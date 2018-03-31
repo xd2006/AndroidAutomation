@@ -10,5 +10,8 @@ When(/^I click on Got it button$/) do
 end
 
 Then(/^I land on Area screen$/) do
-  text("Area")
+  actual_value = find_element(id: "toolbar").find_element(xpath: ".//android.widget.TextView").text
+  if actual_value != "Area"
+    fail("Expected value is 'Area', but actual value was #{actual_value}")
+  end
 end

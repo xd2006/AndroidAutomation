@@ -27,5 +27,10 @@ Feature: User is able to convert area units
     Scenario: User is able to use soft keyboard to enter values
       Given I click on Clear button
       When I click on From field
-      And I press "3" on soft keyboard
-      Then I get "3000000" in To field
+      And I press "12" on soft keyboard
+      Then I get "12000000" in To field
+
+    Scenario: User is able to select custom units
+        When I select "Hectare" from left column
+        Then I see "Hectare" in From header
+        And I get "10000" in To field
