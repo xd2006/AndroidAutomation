@@ -34,3 +34,14 @@ Feature: User is able to convert area units
         When I select "Hectare" from left column
         Then I see "Hectare" in From header
         And I get "10000" in To field
+
+  Scenario Outline: User is able to select custom units in To column
+    When I select "<unit>" from right column
+    Then I see "<unit>" in To header
+    And I get "<result>" in To field
+
+    Examples:
+      |unit        | result   |
+      |   Hectare  | 100      |
+      |   Acre     | 247.1054 |
+      |   Sq Centimetre | 10000000000  |
